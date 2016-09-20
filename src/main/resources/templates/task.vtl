@@ -1,5 +1,13 @@
 <h1>$task.getDescription()</h1>
 <h2>Completed?: $task.getCompleted()</h2>
+<h2>Belongs to: $category.getName() list.</h2>
 
-<a href="categories/:id/tasks/new">Add Another Task</a>
-<a href="/tasks">All Tasks</a>
+<h2>Edit Task:</h2>
+
+<form action="/categories/$task.getCategoryId()/tasks/$task.getId()" method="post">
+  <label for="description"> Description</label>
+  <input type="text" name="description" id="description">
+  <button type="submit" name="btn btn-info">Update task</button>
+</form>
+
+<a href="/categories/$category.getId()"> Return to $category.getName()</a>

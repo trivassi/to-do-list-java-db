@@ -48,6 +48,14 @@ public class TaskTest {
   }
 
   @Test
+  public void update_updatesTaskDescription_true() {
+    Task myTask = new Task("Mow the lawn", 1);
+    myTask.save();
+    myTask.update("Take a nap");
+    assertEquals("Take a nap", Task.find(myTask.getId()).getDescription());
+  }
+
+  @Test
   public void save_assignsIdToObject() {
     Task myTask = new Task("Mow the lawn");
     myTask.save();

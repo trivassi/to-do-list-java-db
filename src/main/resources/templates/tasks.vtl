@@ -1,0 +1,13 @@
+<h1>Task list!</h1>
+
+#if ($tasks)
+  <ul>
+    #foreach ($task in $tasks)
+      <li>$task.getDescription()</li>
+    #end
+  </ul>
+#else
+  <p>No tasks!</p>
+#end
+
+<h4><a href="/categories/$category.getID()/tasks/new">Add New Task</a></h4>
